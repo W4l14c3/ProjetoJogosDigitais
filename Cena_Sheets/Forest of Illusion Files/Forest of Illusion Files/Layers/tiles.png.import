@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brush.png-8b09b18d43c891c760e195ea53fa7be6.stex"
+path="res://.import/tiles.png-e629b852dcad899f14aa364d453ae03c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cena_Sheets/Final/Final/brush.png"
-dest_files=[ "res://.import/brush.png-8b09b18d43c891c760e195ea53fa7be6.stex" ]
+source_file="res://Cena_Sheets/Forest of Illusion Files/Forest of Illusion Files/Layers/tiles.png"
+dest_files=[ "res://.import/tiles.png-e629b852dcad899f14aa364d453ae03c.stex" ]
 
 [params]
 
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=1.0
+svg/scale=0.001

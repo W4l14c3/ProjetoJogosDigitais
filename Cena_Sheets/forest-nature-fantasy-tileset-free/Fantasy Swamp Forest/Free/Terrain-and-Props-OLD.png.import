@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brush.png-8b09b18d43c891c760e195ea53fa7be6.stex"
+path="res://.import/Terrain-and-Props-OLD.png-03b74209b515df4cf86a7830283acaa7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cena_Sheets/Final/Final/brush.png"
-dest_files=[ "res://.import/brush.png-8b09b18d43c891c760e195ea53fa7be6.stex" ]
+source_file="res://Cena_Sheets/forest-nature-fantasy-tileset-free/Fantasy Swamp Forest/Free/Terrain-and-Props-OLD.png"
+dest_files=[ "res://.import/Terrain-and-Props-OLD.png-03b74209b515df4cf86a7830283acaa7.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

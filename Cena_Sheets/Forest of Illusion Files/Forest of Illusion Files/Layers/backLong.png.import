@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brush.png-8b09b18d43c891c760e195ea53fa7be6.stex"
+path="res://.import/backLong.png-8c3c3d10875979b0e9ee1ff31f62bf34.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cena_Sheets/Final/Final/brush.png"
-dest_files=[ "res://.import/brush.png-8b09b18d43c891c760e195ea53fa7be6.stex" ]
+source_file="res://Cena_Sheets/Forest of Illusion Files/Forest of Illusion Files/Layers/backLong.png"
+dest_files=[ "res://.import/backLong.png-8c3c3d10875979b0e9ee1ff31f62bf34.stex" ]
 
 [params]
 
