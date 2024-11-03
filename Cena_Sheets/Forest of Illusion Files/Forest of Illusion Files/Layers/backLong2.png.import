@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/backLong2.png-12a38174a1db40b19cbef8b6d2b7dc94.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Cena_Sheets/Forest of Illusion Files/__MACOSX/Forest of Illusion Files/Previews/._Previewx3.png"
+source_file="res://Cena_Sheets/Forest of Illusion Files/Forest of Illusion Files/Layers/backLong2.png"
+dest_files=[ "res://.import/backLong2.png-12a38174a1db40b19cbef8b6d2b7dc94.stex" ]
+
 [params]
 
 compress/mode=0

@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/FlorestaMeio2.png-997069c1bb472916b6ccd4546fb81cfb.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Cena_Sheets/Forest of Illusion Files/__MACOSX/Forest of Illusion Files/Layers/._middle.png"
+source_file="res://Cena_Sheets/Forest of Illusion Files/Forest of Illusion Files/Layers/FlorestaMeio2.png"
+dest_files=[ "res://.import/FlorestaMeio2.png-997069c1bb472916b6ccd4546fb81cfb.stex" ]
+
 [params]
 
 compress/mode=0
