@@ -14,8 +14,8 @@ func movimento():
 	mov.x = 0
 	mov.y += gravidade
 	
-	while(mov.x == 0):
-		$AnimationPlayer.play("idle")
+	##while(mov.x == 0):
+	#	$AnimationPlayer.play("idle")
 	if(Input.action_press("ui_right")):
 		mov.x = -velocidade
 		$Sprite.flip_h = false
