@@ -5,6 +5,8 @@ var velocidade = 150
 var gravidade = 10
 var forca_pulo = 275
 var mov = Vector2.ZERO
+var pulando = false
+var atack = false
 
 func _process(delta):
 	movimento()
@@ -18,18 +20,31 @@ func movimento():
 	if(Input.is_action_pressed("ui_right")):
 		mov.x = +velocidade
 		$Sprite.flip_h = false
-		if(is_on_floor()):
-			$AnimationPlayer.play("Run")
+
 	elif(Input.is_action_pressed("ui_left")):
 		mov.x = -velocidade
 		$Sprite.flip_h = true
-		if(is_on_floor()):
-			$AnimationPlayer.play("Run")
-	else:
-		$AnimationPlayer.play("idle")
 		
 	if(Input.is_action_just_pressed("ui_up") and is_on_floor()):
 		mov.y =- forca_pulo
-		$AnimationPlayer.play("Jump")
+	
+	if(is_on_floor()):
+		pulando = false
+		if (not atack):# SE NÃO ESTIVER ATACANDO ENTRA NO IF.
+			if(mov.x == 0):# se movimento eixo x for 0 aniimaçãoo idle
+				$AnimationPlayer.play("idle")
+			else:
+				$AnimationPlayer.play("Run")
+				
+			if(Input.is_action_just_pressed("ui_accept")):
+				atack = true
+				$AnimationPlayer.play("AttackSpin")
+			
+		if($AnimationPlayer.current_animation == ""):
+			atack = false
+	elif(not pulando):
+		pulando = true
+		atack = false
+		$AnimationPlayer.play("pulo")
 	
 	mov = move_and_slide(mov,Vector2(0, -1))
