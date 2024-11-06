@@ -36,9 +36,12 @@ func movimento():
 			else:
 				$AnimationPlayer.play("Run")
 				
-			if(Input.is_action_just_pressed("ui_accept")):
+			if(Input.is_action_just_pressed("AtaqueGiratorio")):
 				atack = true
 				$AnimationPlayer.play("AttackSpin")
+			elif(Input.is_action_just_pressed("AtaqueDuplo")):
+				atack = true
+				$AnimationPlayer.play("DoubleAttack")
 			
 		if($AnimationPlayer.current_animation == ""):
 			atack = false
