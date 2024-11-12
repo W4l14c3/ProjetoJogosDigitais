@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 var velocidade = 150
-var gravidade = 10
+var gravidade = 16
 var forca_pulo = 275
 var mov = Vector2.ZERO
 var pulando = false
