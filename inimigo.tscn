@@ -1,11 +1,10 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Run.png" type="Texture" id=1]
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Idle.png" type="Texture" id=2]
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Attack.png" type="Texture" id=3]
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Take Hit.png" type="Texture" id=4]
-
-[sub_resource type="CapsuleShape2D" id=1]
+[ext_resource path="res://script_inimigo.gd" type="Script" id=5]
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
@@ -126,16 +125,39 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=27]
+height = 15.3149
+
 [node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 50.0 ]
+}
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-shape = SubResource( 1 )
+scale = Vector2( 1.64237, 1.64237 )
+script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 14 )
-animation = "Take a hit"
-frame = 1
+animation = "Run"
+frame = 2
+playing = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0.608877, 7.9154 )
+shape = SubResource( 27 )
+
+[node name="RayCast2D2Esquerdo" type="RayCast2D" parent="KinematicBody2D"]
+position = Vector2( -12.1775, 17.6574 )
+scale = Vector2( 0.375329, 0.354137 )
+enabled = true
+cast_to = Vector2( 0, 36.1059 )
+
+[node name="RayCast2D2Direito" type="RayCast2D" parent="KinematicBody2D"]
+position = Vector2( 11.5687, 18.2663 )
+scale = Vector2( 0.375329, 0.354137 )
+enabled = true
+cast_to = Vector2( 0, 35 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+root_node = NodePath("../..")

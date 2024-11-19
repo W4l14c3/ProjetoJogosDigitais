@@ -109,21 +109,21 @@ tracks/0/keys = {
 [node name="Personagem" type="Node2D"]
 position = Vector2( 159, 95 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Personagem" type="KinematicBody2D" parent="."]
 scale = Vector2( 1.15, 1.15 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem"]
 position = Vector2( 1.08693, -0.434776 )
 shape = SubResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+[node name="Sprite" type="Sprite" parent="Personagem"]
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 66, 6, 17, 30 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem"]
 anims/AttackSpin = SubResource( 7 )
 anims/DoubleAttack = SubResource( 5 )
 anims/RESET = SubResource( 2 )
@@ -131,7 +131,7 @@ anims/Run = SubResource( 4 )
 anims/idle = SubResource( 3 )
 anims/pulo = SubResource( 6 )
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Personagem"]
 current = true
 zoom = Vector2( 0.4, 0.4 )
 limit_top = 315

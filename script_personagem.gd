@@ -7,6 +7,7 @@ var forca_pulo = 275
 var mov = Vector2.ZERO
 var pulando = false
 var atack = false
+var tipo_golpe = 1
 
 func _process(delta):
 	movimento()
@@ -39,6 +40,7 @@ func movimento():
 			if(Input.is_action_just_pressed("AtaqueGiratorio")):
 				atack = true
 				$AnimationPlayer.play("AttackSpin")
+				print(tipo_golpe)
 			elif(Input.is_action_just_pressed("AtaqueDuplo")):
 				atack = true
 				$AnimationPlayer.play("DoubleAttack")
