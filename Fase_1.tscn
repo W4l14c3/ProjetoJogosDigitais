@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://FlorestaDistante.gd" type="Script" id=1]
 [ext_resource path="res://Cena_Sheets/Forest of Illusion Files/Forest of Illusion Files/Layers/tiles.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Cena_Sheets/Final/Final/Salt.png" type="Texture" id=7]
 [ext_resource path="res://Cena_Sheets/Forest of Illusion Files/Forest of Illusion Files/Layers/backLong2.png" type="Texture" id=8]
 [ext_resource path="res://inimigo.tscn" type="PackedScene" id=9]
-[ext_resource path="res://cena_consumivel.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=4]
 0/name = "brush.png 0"
@@ -552,13 +551,4 @@ autoplay = "Plataforma movel"
 anims/RESET = SubResource( 18 )
 
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( 618, 480 )
-
-[node name="Node2D3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 901, 339 )
-
-[node name="Node2D4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1398, 403 )
-
-[node name="Node2D2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 53, 502 )
+position = Vector2( 1256, 424 )
