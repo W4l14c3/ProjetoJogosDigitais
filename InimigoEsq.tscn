@@ -1,0 +1,209 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://script_inimigoEsq.gd" type="Script" id=1]
+[ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Skeleton/Take Hit.png" type="Texture" id=2]
+[ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Skeleton/Walk.png" type="Texture" id=3]
+[ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Skeleton/Idle.png" type="Texture" id=4]
+[ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Skeleton/Shield.png" type="Texture" id=5]
+[ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Skeleton/Attack.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 6 )
+region = Rect2( 600, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 6 )
+region = Rect2( 750, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 6 )
+region = Rect2( 900, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 6 )
+region = Rect2( 1050, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "Shield",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Take a hit",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 7.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=26]
+height = 34.7989
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 29.355, 19.484 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 19.613, 12.1775 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 19.613, 12.3065 )
+
+[node name="InimigoEsq" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+scale = Vector2( 1.64237, 1.64237 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+frames = SubResource( 25 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0, 4.87101 )
+shape = SubResource( 26 )
+
+[node name="RayCast2D2Esquerdo" type="RayCast2D" parent="KinematicBody2D"]
+position = Vector2( -11.5686, 20.0929 )
+scale = Vector2( 0.375329, 0.354137 )
+enabled = true
+cast_to = Vector2( 0, 36.1059 )
+
+[node name="RayCast2D2Direito" type="RayCast2D" parent="KinematicBody2D"]
+position = Vector2( 12.1776, 20.7018 )
+scale = Vector2( 0.375329, 0.354137 )
+enabled = true
+cast_to = Vector2( 0, 35 )
+
+[node name="Timer" type="Timer" parent="KinematicBody2D"]
+wait_time = 15.0
+autostart = true
+
+[node name="ZonaDeDeteccaoEsquerda" type="Area2D" parent="KinematicBody2D"]
+position = Vector2( -43.8391, 9.74202 )
+
+[node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoEsquerda"]
+position = Vector2( -1.90735e-05, 0 )
+shape = SubResource( 27 )
+
+[node name="ZonaDeDeteccaoDireita" type="Area2D" parent="KinematicBody2D"]
+position = Vector2( 43.8391, 9.74202 )
+
+[node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoDireita"]
+position = Vector2( 1.90735e-05, 0 )
+shape = SubResource( 27 )
+
+[node name="RangeAttackEsq" type="Area2D" parent="KinematicBody2D"]
+position = Vector2( -43.8391, 9.74202 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/RangeAttackEsq"]
+modulate = Color( 1, 0, 0.140625, 1 )
+position = Vector2( 9.61303, 2.4355 )
+shape = SubResource( 28 )
+
+[node name="RangeAttackDir" type="Area2D" parent="KinematicBody2D"]
+position = Vector2( 43.8391, 9.74202 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/RangeAttackDir"]
+modulate = Color( 1, 0, 0.140625, 1 )
+position = Vector2( -9.61303, 2.30651 )
+shape = SubResource( 29 )
+
+[connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsquerda"]
+[connection signal="body_exited" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsqOut"]
+[connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoDireita" to="KinematicBody2D" method="ZonaDeDeteccaoDireita"]
+[connection signal="body_exited" from="KinematicBody2D/ZonaDeDeteccaoDireita" to="KinematicBody2D" method="ZonaDeDeteccaoDirOut"]

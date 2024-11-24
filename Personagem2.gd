@@ -22,6 +22,7 @@ func movimento():
 		if(Input.is_action_pressed("ui_right")):
 			mov.x = +velocidade
 			$AnimatedSprite.flip_h = false
+			
 
 		elif(Input.is_action_pressed("ui_left")):
 			mov.x = -velocidade
@@ -29,42 +30,37 @@ func movimento():
 			
 		if(Input.is_action_just_pressed("ui_up") and is_on_floor()):
 			mov.y =- forca_pulo
-		
-		if(is_on_floor()):
-			pulando = false
+	
+		if(is_on_floor()):# se estiver no chão.
+			pulando = false #Define pulando como falso.
 			if (not atack):# SE NÃO ESTIVER ATACANDO ENTRA NO IF.
 				if(mov.x == 0):# se movimento eixo x for 0 aniimaçãoo idle
-					$AnimatedSprite.play("Idle")
+					$AnimatedSprite.play("idle")
 				else:
-					$AnimatedSprite.play("Run")
+					$AnimatedSprite.play("run")
 					
-				if(Input.is_action_just_pressed("AtaqueGiratorio")):
+				if(Input.is_action_just_pressed("ui_accept")):
 					atack = true
 					podeMover = false
-					$AnimatedSprite.play("AttackSpin")
-					print(tipo_golpe)
-				elif(Input.is_action_just_pressed("AtaqueDuplo")):
-					podeMover = false
-					atack = true
-					$AnimatedSprite.play("DoubleAttack")
-			
-		elif(not pulando and mov.y < -40):#Se o personagem ja não pulou
+					$AnimatedSprite.play("Atack")
+			if(atack):
+	#			print("Ataque acabou")
+	#			atack = false
+				pass
+		elif(not pulando and mov.y < -40):
 			print(mov.y)
 			pulando = true
 			atack = false
-			$AnimatedSprite.play("Jump")
-		elif(mov.y >= 10 and mov.y <= 170):
-			$AnimatedSprite.play("SpinAfterJump")
-		elif(mov.y >= 200):
-			$AnimatedSprite.play("Fall")
-		
-		mov = move_and_slide(mov,Vector2(0, -1))
+			$AnimatedSprite.play("jump")
+		elif(mov.y >= 100):
+			$AnimatedSprite.play("fall")
 		
 		if(global_position.y > $Camera2D.limit_bottom):
 	#		ScriptGlobal.reset()
 			get_tree().reload_current_scene()
+		mov = move_and_slide(mov,Vector2(0, -1))
 
 
-func animacaofinalizada():
+func animationAtack():
 	podeMover = true
-	atack = false # Replace with function body.
+	atack = false

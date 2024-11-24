@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Shield.png-09ad583c3fc5f2ec73eed193374965c3.stex"
+path="res://.import/jump.png-d7b034a5f48baf34dbf868a3d6885203.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Skeleton/Shield.png"
-dest_files=[ "res://.import/Shield.png-09ad583c3fc5f2ec73eed193374965c3.stex" ]
+source_file="res://Personagem_Sheets/MagicClifs/Player/spritesheets/jump.png"
+dest_files=[ "res://.import/jump.png-d7b034a5f48baf34dbf868a3d6885203.stex" ]
 
 [params]
 
