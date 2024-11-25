@@ -2805,7 +2805,6 @@ position = Vector2( 0, 9 )
 texture = ExtResource( 4 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="BG"]
-position = Vector2( 384, 208 )
 motion_mirroring = Vector2( 352, 0 )
 
 [node name="Sprite" type="Sprite" parent="BG/ParallaxLayer3"]
