@@ -401,19 +401,19 @@ radius = 38.3592
 height = 56.0166
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 56.6175, 41.4036 )
+extents = Vector2( 9.74202, 41.4036 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 115.078, 26.7906 )
+extents = Vector2( 52.6678, 26.7906 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 114.469, 26.7906 )
+extents = Vector2( 55.1034, 26.7906 )
 
 [sub_resource type="RectangleShape2D" id=117]
-extents = Vector2( 29, 60.5 )
+extents = Vector2( 17.5, 60.5 )
 
 [sub_resource type="RectangleShape2D" id=118]
-extents = Vector2( 28, 60 )
+extents = Vector2( 20, 60 )
 
 [node name="StoneBoss" type="Node2D"]
 
@@ -433,13 +433,13 @@ position = Vector2( 0.608877, 7.9154 )
 shape = SubResource( 28 )
 
 [node name="RayCast2D2Esquerdo" type="RayCast2D" parent="KinematicBody2D"]
-position = Vector2( -48.7101, 53.5811 )
+position = Vector2( -58.4521, 48.7101 )
 scale = Vector2( 1.5, 1.5 )
 enabled = true
 cast_to = Vector2( 0, 25.9787 )
 
 [node name="RayCast2D2Direito" type="RayCast2D" parent="KinematicBody2D"]
-position = Vector2( 53.5811, 53.5811 )
+position = Vector2( 55.4077, 48.7101 )
 scale = Vector2( 1.5, 1.5 )
 enabled = true
 cast_to = Vector2( 3.8147e-06, 25.9787 )
@@ -452,14 +452,14 @@ autostart = true
 position = Vector2( -43.8391, 9.74202 )
 
 [node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoEsquerda"]
-position = Vector2( -100.457, 0 )
+position = Vector2( -43.8391, -4.26213 )
 shape = SubResource( 29 )
 
 [node name="ZonaDeDeteccaoDireita" type="Area2D" parent="KinematicBody2D"]
 position = Vector2( 43.8391, 9.74202 )
 
 [node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoDireita"]
-position = Vector2( 107.162, 0 )
+position = Vector2( 37.7503, -4.26213 )
 shape = SubResource( 29 )
 
 [node name="RangedAttackEsq" type="Area2D" parent="KinematicBody2D"]
@@ -467,7 +467,7 @@ position = Vector2( -43.8391, 9.74202 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/RangedAttackEsq"]
 modulate = Color( 1, 0, 0.140625, 1 )
-position = Vector2( -282.519, 0 )
+position = Vector2( -125.428, 6.08876 )
 shape = SubResource( 30 )
 
 [node name="RangedAttackDir" type="Area2D" parent="KinematicBody2D"]
@@ -475,32 +475,32 @@ position = Vector2( 43.8391, 9.74202 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/RangedAttackDir"]
 modulate = Color( 1, 0, 0.140625, 1 )
-position = Vector2( 287.39, 0 )
+position = Vector2( 116.904, 6.08876 )
 shape = SubResource( 31 )
 
 [node name="MeleeAttackDir" type="Area2D" parent="KinematicBody2D"]
 scale = Vector2( 0.608876, 0.608876 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/MeleeAttackDir"]
-position = Vector2( 120, 32 )
+position = Vector2( 91, 13 )
 shape = SubResource( 117 )
 
 [node name="MeleeAttackEsq" type="Area2D" parent="KinematicBody2D"]
 scale = Vector2( 0.608876, 0.608876 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/MeleeAttackEsq"]
-position = Vector2( -112, 32 )
+position = Vector2( -96, 13 )
 shape = SubResource( 118 )
 
 [node name="Position2DDir" type="Position2D" parent="KinematicBody2D"]
-position = Vector2( 92.5492, -29.2261 )
+position = Vector2( 55.4077, -19.484 )
 scale = Vector2( 0.608876, 0.608876 )
 
 [node name="Position2DEsq" type="Position2D" parent="KinematicBody2D"]
-position = Vector2( -87.6782, -29.2261 )
+position = Vector2( -58.4521, -24.355 )
 scale = Vector2( 0.608876, 0.608876 )
 
-[connection signal="animation_finished" from="KinematicBody2D/AnimatedSprite" to="KinematicBody2D" method="AnimationFinished"]
+[connection signal="animation_finished" from="KinematicBody2D/AnimatedSprite" to="KinematicBody2D" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsquerda"]
 [connection signal="body_exited" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsqOut"]
 [connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoDireita" to="KinematicBody2D" method="ZonaDeDeteccaoDireita"]

@@ -5425,7 +5425,7 @@ position = Vector2( 936, 462 )
 position = Vector2( 2424, 366 )
 
 [node name="Personagem" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2425, 482 )
+position = Vector2( 2787, 482 )
 
 [node name="StoneBoss" parent="." instance=ExtResource( 14 )]
 position = Vector2( 3056, 461 )

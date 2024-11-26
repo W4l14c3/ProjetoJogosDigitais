@@ -68,7 +68,7 @@ tracks/0/keys = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 177, 0, 57, 20 )
+region_rect = Rect2( 0, 0, 57, 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/DuasVidas = SubResource( 2 )
