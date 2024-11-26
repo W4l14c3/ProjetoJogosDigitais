@@ -12,7 +12,7 @@ func _ready():
 	pass # Replace with function body.
 	
 
-var velocidade = 100
+var velocidade = 65
 var direcao = 1
 var forca_gravidade = 30
 var mov = Vector2.ZERO
@@ -82,11 +82,14 @@ func movimentoAle():
 	rota.
 	"""
 	if(movAleAtivo):
+		stoneAttack = false
+		$AnimatedSprite.play("Idle")
 		if not atacando:
 			$AnimatedSprite.play("Idle")
 		mov.y += forca_gravidade
 		if(round($Timer.time_left) < 7):
 			mov.x = 0
+			$AnimatedSprite.play("Idle")
 			
 		elif(round($Timer.time_left) > 7):
 			if not atacando:	
@@ -109,23 +112,23 @@ func movimentoAle():
 	
 
 
-func rangedAttack():
-	if(not stoneAttack):
-		print("Atirou")
-		if(rangeAttackEsq):
-			stoneAttack = true
-			print("Esquerda")
-			direcao = 1
-			$AnimatedSprite.flip_h = false
-			if not atacando:
-				$AnimatedSprite.play("RangeAttack")
-		elif(rangeAttackDir):
-			stoneAttack = true
-			print("Direita")
-			direcao = -1
-			$AnimatedSprite.flip_h = false
-			if not atacando:
-				$AnimatedSprite.play("RangeAttack")
+#func rangedAttack():
+#	if(not stoneAttack):
+#		print("Atirou")
+#		if(rangeAttackEsq):
+#			stoneAttack = true
+#			print("Esquerda")
+#			direcao = 1
+#			$AnimatedSprite.flip_h = false
+#			if not atacando:
+#				$AnimatedSprite.play("RangeAttack")
+#		elif(rangeAttackDir):
+#			stoneAttack = true
+#			print("Direita")
+#			direcao = -1
+#			$AnimatedSprite.flip_h = false
+#			if not atacando:
+#				$AnimatedSprite.play("RangeAttack")
 
 """As funções abaixo detectão se o (Personagem) esta dentro ou fora do alcance."""
 
@@ -163,7 +166,7 @@ func ZonaDeDeteccaoEsqOut(body):
 
 """Funções de Ataque"""
 
-func carregaDisparo(animacao):
+func carregaDisparo():
 	if(stoneAttack):
 		
 		var cena_disparo = preload("res://StoneProjectile.tscn")
@@ -173,6 +176,7 @@ func carregaDisparo(animacao):
 		
 		if (direcao==1):
 			obj_disparo.global_position = $Position2DDir.global_position
+			
 		elif (direcao==-1):
 			obj_disparo.global_position = $Position2DEsq.global_position
 		
@@ -183,10 +187,12 @@ func onRangedAttackEsq(body):
 	if(body.name == "Personagem"):
 		print("Na mira")
 		if(not stoneAttack):
-			rangedAttack()
+#			rangedAttack()
 			stoneAttack = true
 			#rangeAttackEsq = true
 			movAleAtivo = false
+			direcao = -1
+			$AnimatedSprite.flip_h = true
 			$AnimatedSprite.play("RangeAttack")
 			atacando = false
 
@@ -195,29 +201,33 @@ func onRangedAttackDir(body):
 	if(body.name == "Personagem"):
 		print("Na mira")
 		if(not stoneAttack):
-			rangedAttack()
+#			rangedAttack()
 			stoneAttack = true
 			#rangeAttackDir = true
 			movAleAtivo = false
+			direcao = 1
+			$AnimatedSprite.flip_h = false
 			$AnimatedSprite.play("RangeAttack")
 			atacando = false
 
 
 func offRangeAttackEsq(body):
 	if(body.name == "Personagem"):
-		stoneAttack = false
+#		stoneAttack = false
 		rangeAttackEsq = false
 		movAleAtivo = true
 
 
 func offRangeAttackDir(body):
 	if(body.name == "Personagem"):
-		stoneAttack = false
+#		stoneAttack = false
 		rangeAttackDir = false
 		movAleAtivo = true
 
 
 func _on_AnimatedSprite_animation_finished():
 	if ($AnimatedSprite.animation=="RangeAttack"):
+		stoneAttack = true
 		carregaDisparo()
 		atacando = false
+		movAleAtivo = true

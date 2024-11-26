@@ -237,6 +237,7 @@ position = Vector2( -3.47827, -6.08695 )
 scale = Vector2( 1.50783, 1.50783 )
 frames = SubResource( 29 )
 animation = "Idle"
+frame = 2
 playing = true
 
 [connection signal="animation_finished" from="Personagem/AnimatedSprite" to="Personagem" method="animacaofinalizada"]

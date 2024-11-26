@@ -5429,7 +5429,7 @@ position = Vector2( 2787, 482 )
 
 [node name="StoneBoss" parent="." instance=ExtResource( 14 )]
 position = Vector2( 3056, 461 )
-scale = Vector2( 0.648268, 0.648268 )
+scale = Vector2( 0.452159, 0.452159 )
 
 [node name="Objetos" type="TileMap" parent="."]
 position = Vector2( 24, 224 )
