@@ -381,7 +381,7 @@ animations = [ {
 "speed": 6.0
 }, {
 "frames": [ SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
-"loop": false,
+"loop": true,
 "name": "RangeAttack",
 "speed": 8.0
 }, {
@@ -410,10 +410,10 @@ extents = Vector2( 52.6678, 8.87394 )
 extents = Vector2( 55.1034, 8.87464 )
 
 [sub_resource type="RectangleShape2D" id=117]
-extents = Vector2( 17.5, 60.5 )
+extents = Vector2( 39.25, 60.5 )
 
 [sub_resource type="RectangleShape2D" id=118]
-extents = Vector2( 20, 60 )
+extents = Vector2( 42, 60 )
 
 [node name="StoneBoss" type="Node2D"]
 
@@ -424,7 +424,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 scale = Vector2( 2.16011, 2.16011 )
 frames = SubResource( 27 )
-animation = "Run"
+animation = "Idle"
 frame = 1
 playing = true
 
@@ -449,7 +449,7 @@ wait_time = 15.0
 autostart = true
 
 [node name="ZonaDeDeteccaoEsquerda" type="Area2D" parent="KinematicBody2D"]
-position = Vector2( -43.8391, 9.74202 )
+position = Vector2( -77.9362, 9.74202 )
 
 [node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoEsquerda"]
 position = Vector2( -43.8391, -4.26213 )
@@ -459,7 +459,7 @@ shape = SubResource( 29 )
 position = Vector2( 43.8391, 9.74202 )
 
 [node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoDireita"]
-position = Vector2( 37.7503, -4.26213 )
+position = Vector2( 73.0651, -4.87101 )
 shape = SubResource( 29 )
 
 [node name="RangedAttackEsq" type="Area2D" parent="KinematicBody2D"]
@@ -484,18 +484,18 @@ shape = SubResource( 31 )
 scale = Vector2( 0.608876, 0.608876 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/MeleeAttackDir"]
-position = Vector2( 91, 13 )
+position = Vector2( 112.75, 13 )
 shape = SubResource( 117 )
 
 [node name="MeleeAttackEsq" type="Area2D" parent="KinematicBody2D"]
 scale = Vector2( 0.608876, 0.608876 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/MeleeAttackEsq"]
-position = Vector2( -96, 13 )
+position = Vector2( -118, 13 )
 shape = SubResource( 118 )
 
 [node name="Position2DDir" type="Position2D" parent="KinematicBody2D"]
-position = Vector2( 55.4077, -19.484 )
+position = Vector2( 55.4077, -24.355 )
 scale = Vector2( 0.608876, 0.608876 )
 
 [node name="Position2DEsq" type="Position2D" parent="KinematicBody2D"]
@@ -511,3 +511,5 @@ scale = Vector2( 0.608876, 0.608876 )
 [connection signal="body_exited" from="KinematicBody2D/RangedAttackEsq" to="KinematicBody2D" method="offRangeAttackEsq"]
 [connection signal="body_entered" from="KinematicBody2D/RangedAttackDir" to="KinematicBody2D" method="onRangedAttackDir"]
 [connection signal="body_exited" from="KinematicBody2D/RangedAttackDir" to="KinematicBody2D" method="offRangeAttackDir"]
+[connection signal="body_entered" from="KinematicBody2D/MeleeAttackDir" to="KinematicBody2D" method="onMeleeAttackRangeDir"]
+[connection signal="body_entered" from="KinematicBody2D/MeleeAttackEsq" to="KinematicBody2D" method="onMeleeAttackRangeEsq"]

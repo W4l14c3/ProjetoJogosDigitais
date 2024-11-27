@@ -21,6 +21,7 @@ var dirAtivo = false
 var esqAtivo = false
 var perseguicao = false
 var stoneAttack = false
+var meleeAttack = false
 var rangeAttackEsq = false
 var rangeAttackDir = false
 var laserBeanAttack = false
@@ -185,8 +186,8 @@ func carregaDisparo():
 
 func onRangedAttackEsq(body):
 	if(body.name == "Personagem"):
-		print("Na mira")
 		if(not stoneAttack):
+			print("Na mira")
 #			rangedAttack()
 			stoneAttack = true
 			#rangeAttackEsq = true
@@ -199,8 +200,8 @@ func onRangedAttackEsq(body):
 
 func onRangedAttackDir(body):
 	if(body.name == "Personagem"):
-		print("Na mira")
 		if(not stoneAttack):
+			print("Na mira")
 #			rangedAttack()
 			stoneAttack = true
 			#rangeAttackDir = true
@@ -215,14 +216,14 @@ func offRangeAttackEsq(body):
 	if(body.name == "Personagem"):
 #		stoneAttack = false
 		rangeAttackEsq = false
-		movAleAtivo = true
+		#movAleAtivo = true
 
 
 func offRangeAttackDir(body):
 	if(body.name == "Personagem"):
 #		stoneAttack = false
 		rangeAttackDir = false
-		movAleAtivo = true
+		#movAleAtivo = true
 
 
 func _on_AnimatedSprite_animation_finished():
@@ -231,3 +232,31 @@ func _on_AnimatedSprite_animation_finished():
 		carregaDisparo()
 		atacando = false
 		movAleAtivo = true
+
+
+
+func onMeleeAttackRangeDir(body):
+	if(body.name == "Personagem"):
+		if(not meleeAttack):
+			print("Na mira")
+			meleeAttack = true
+			#rangeAttackDir = true
+			movAleAtivo = false
+			direcao = 1
+			$AnimatedSprite.flip_h = false
+			$AnimatedSprite.play("Melee")
+			atacando = false
+
+
+func onMeleeAttackRangeEsq(body):
+	$AnimatedSprite.play("Melee")
+	if(body.name == "Personagem"):
+		if(not meleeAttack):
+			print("Na mira")
+			meleeAttack = true
+			#rangeAttackDir = true
+			movAleAtivo = false
+			direcao = -1
+			$AnimatedSprite.flip_h = true
+			$AnimatedSprite.play("Melee")
+			atacando = false
