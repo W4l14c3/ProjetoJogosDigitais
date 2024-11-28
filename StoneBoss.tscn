@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://Inimigos/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" type="Texture" id=1]
 [ext_resource path="res://script_StoneBoss.gd" type="Script" id=2]
@@ -372,7 +372,7 @@ animations = [ {
 "speed": 7.0
 }, {
 "frames": [ SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
-"loop": false,
+"loop": true,
 "name": "LaserCast",
 "speed": 10.0
 }, {
@@ -397,51 +397,87 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=131]
+[sub_resource type="AtlasTexture" id=152]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 115, 100 )
+region = Rect2( 10, 0, 100, 100 )
 
-[sub_resource type="AtlasTexture" id=132]
+[sub_resource type="AtlasTexture" id=153]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 100, 115, 100 )
+region = Rect2( 10, 100, 100, 100 )
 
-[sub_resource type="AtlasTexture" id=133]
+[sub_resource type="AtlasTexture" id=154]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 200, 115, 100 )
+region = Rect2( 10, 200, 100, 100 )
 
-[sub_resource type="AtlasTexture" id=134]
+[sub_resource type="AtlasTexture" id=155]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 300, 115, 100 )
+region = Rect2( 10, 300, 100, 100 )
 
-[sub_resource type="AtlasTexture" id=135]
+[sub_resource type="AtlasTexture" id=156]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 400, 115, 100 )
+region = Rect2( 10, 400, 100, 100 )
 
-[sub_resource type="AtlasTexture" id=136]
+[sub_resource type="AtlasTexture" id=157]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 500, 115, 100 )
+region = Rect2( 10, 500, 100, 100 )
 
-[sub_resource type="AtlasTexture" id=137]
+[sub_resource type="AtlasTexture" id=158]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 600, 115, 100 )
+region = Rect2( 10, 600, 100, 100 )
 
-[sub_resource type="AtlasTexture" id=138]
+[sub_resource type="AtlasTexture" id=159]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 700, 115, 100 )
+region = Rect2( 10, 700, 100, 100 )
 
-[sub_resource type="AtlasTexture" id=139]
+[sub_resource type="AtlasTexture" id=160]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 800, 115, 100 )
+region = Rect2( 10, 800, 100, 100 )
 
-[sub_resource type="SpriteFrames" id=130]
+[sub_resource type="SpriteFrames" id=151]
 animations = [ {
-"frames": [ SubResource( 131 ), SubResource( 132 ), SubResource( 133 ), SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ), SubResource( 138 ), SubResource( 139 ) ],
+"frames": [ SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ), SubResource( 160 ) ],
 "loop": true,
 "name": "LaserCast",
 "speed": 10.0
 } ]
 
-[sub_resource type="CircleShape2D" id=140]
+[sub_resource type="AtlasTexture" id=141]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 900, 300, 100 )
+
+[sub_resource type="AtlasTexture" id=142]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1000, 300, 100 )
+
+[sub_resource type="AtlasTexture" id=143]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1100, 300, 100 )
+
+[sub_resource type="AtlasTexture" id=144]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1200, 300, 100 )
+
+[sub_resource type="AtlasTexture" id=145]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1300, 300, 100 )
+
+[sub_resource type="AtlasTexture" id=146]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1400, 300, 100 )
+
+[sub_resource type="SpriteFrames" id=130]
+animations = [ {
+"frames": [ SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ), SubResource( 145 ), SubResource( 146 ) ],
+"loop": true,
+"name": "LaserBean",
+"speed": 15.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=147]
+height = 245.224
+
+[sub_resource type="CapsuleShape2D" id=148]
+height = 245.224
 
 [sub_resource type="CapsuleShape2D" id=28]
 radius = 38.3592
@@ -451,10 +487,10 @@ height = 56.0166
 extents = Vector2( 21.9196, 41.4036 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 85.7572, 7.91728 )
+extents = Vector2( 42.8786, 7.91728 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 87.793, 8.14931 )
+extents = Vector2( 43.8965, 8.14931 )
 
 [sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 19.25, 60.5 )
@@ -462,11 +498,11 @@ extents = Vector2( 19.25, 60.5 )
 [sub_resource type="RectangleShape2D" id=118]
 extents = Vector2( 22, 60 )
 
-[sub_resource type="CircleShape2D" id=119]
-radius = 39.2713
+[sub_resource type="RectangleShape2D" id=149]
+extents = Vector2( 10, 73.0651 )
 
-[sub_resource type="CircleShape2D" id=120]
-radius = 38.9681
+[sub_resource type="RectangleShape2D" id=150]
+extents = Vector2( 10, 73.0651 )
 
 [node name="StoneBoss" type="Node2D"]
 
@@ -478,20 +514,50 @@ script = ExtResource( 2 )
 scale = Vector2( 2.16011, 2.16011 )
 frames = SubResource( 27 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
+flip_h = true
 
 [node name="LaserCast" type="AnimatedSprite" parent="KinematicBody2D"]
 visible = false
 position = Vector2( 0, -19.484 )
-frames = SubResource( 130 )
+frames = SubResource( 151 )
 animation = "LaserCast"
-frame = 6
+
+[node name="LaserBeanDir" type="AnimatedSprite" parent="KinematicBody2D"]
+visible = false
+position = Vector2( 146.13, -14.613 )
+scale = Vector2( 1.35906, 1.35906 )
+frames = SubResource( 130 )
+animation = "LaserBean"
+frame = 3
+playing = true
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D/LaserBeanDir"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LaserBeanDir/Area2D"]
+position = Vector2( 25.0888, -17.9206 )
+rotation = 1.57079
+shape = SubResource( 147 )
+
+[node name="LaserBeanEsq" type="AnimatedSprite" parent="KinematicBody2D"]
+visible = false
+position = Vector2( -141.259, -14.613 )
+scale = Vector2( 1.35906, 1.35906 )
+frames = SubResource( 130 )
+animation = "LaserBean"
+frame = 1
 playing = true
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LaserCast"]
-shape = SubResource( 140 )
+[node name="Area2D" type="Area2D" parent="KinematicBody2D/LaserBeanEsq"]
+position = Vector2( 96.771, -17.9206 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LaserBeanEsq/Area2D"]
+position = Vector2( -121.86, 0 )
+rotation = -1.57079
+shape = SubResource( 148 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 0.608877, 7.9154 )
@@ -514,34 +580,34 @@ wait_time = 15.0
 autostart = true
 
 [node name="ZonaDeDeteccaoEsquerda" type="Area2D" parent="KinematicBody2D"]
-position = Vector2( -77.9362, 9.74202 )
+position = Vector2( -112.033, 4.87101 )
 
 [node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoEsquerda"]
-position = Vector2( -38.968, -4.87101 )
+position = Vector2( 3.8147e-06, 0 )
 shape = SubResource( 29 )
 
 [node name="ZonaDeDeteccaoDireita" type="Area2D" parent="KinematicBody2D"]
-position = Vector2( 43.8391, 9.74202 )
+position = Vector2( 107.162, 4.87101 )
 
 [node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoDireita"]
-position = Vector2( 68.1941, -4.87101 )
+position = Vector2( -2.28882e-05, 0 )
 shape = SubResource( 29 )
 
 [node name="RangedAttackEsq" type="Area2D" parent="KinematicBody2D"]
-position = Vector2( 14.613, -4.87101 )
+position = Vector2( -160.743, 29.2261 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/RangedAttackEsq"]
 modulate = Color( 1, 0, 0.140625, 1 )
-position = Vector2( -189.969, 32.8635 )
+position = Vector2( 3.05176e-05, -3.8147e-06 )
 scale = Vector2( 0.284, 3.232 )
 shape = SubResource( 30 )
 
 [node name="RangedAttackDir" type="Area2D" parent="KinematicBody2D"]
-position = Vector2( -9.74202, -4.76837e-07 )
+position = Vector2( 155.872, 29.2261 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/RangedAttackDir"]
 modulate = Color( 1, 0, 0.140625, 1 )
-position = Vector2( 180.227, 29.2261 )
+position = Vector2( -3.05176e-05, 0 )
 scale = Vector2( 0.284, 3.232 )
 shape = SubResource( 31 )
 
@@ -567,29 +633,24 @@ scale = Vector2( 0.608876, 0.608876 )
 position = Vector2( -58.4521, -24.355 )
 scale = Vector2( 0.608876, 0.608876 )
 
-[node name="Position2DDirLaser" type="Position2D" parent="KinematicBody2D"]
-position = Vector2( 4.87101, -38.9681 )
-scale = Vector2( 0.608876, 0.608876 )
-
-[node name="Position2DEsqLaser" type="Position2D" parent="KinematicBody2D"]
-position = Vector2( 4.87101, -38.9681 )
-scale = Vector2( 0.608876, 0.608876 )
-
 [node name="LaserAttackDir" type="Area2D" parent="KinematicBody2D"]
 position = Vector2( 233.808, 38.9681 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LaserAttackDir"]
-shape = SubResource( 119 )
+position = Vector2( 0.000457764, -2.28882e-05 )
+shape = SubResource( 149 )
 
 [node name="LaserAttackEsq" type="Area2D" parent="KinematicBody2D"]
 position = Vector2( -238.679, 38.9681 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LaserAttackEsq"]
-position = Vector2( 4.57764e-05, 0 )
-shape = SubResource( 120 )
+position = Vector2( -1.52588e-05, 0 )
+shape = SubResource( 150 )
 
 [connection signal="animation_finished" from="KinematicBody2D/AnimatedSprite" to="KinematicBody2D" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="KinematicBody2D/LaserCast" to="KinematicBody2D" method="_on_LaserCast_animation_finished"]
+[connection signal="animation_finished" from="KinematicBody2D/LaserBeanDir" to="KinematicBody2D" method="laserBeanAnimationFinished"]
+[connection signal="animation_finished" from="KinematicBody2D/LaserBeanEsq" to="KinematicBody2D" method="laserBeanAnimationFinished"]
 [connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsquerda"]
 [connection signal="body_exited" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsqOut"]
 [connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoDireita" to="KinematicBody2D" method="ZonaDeDeteccaoDireita"]

@@ -1,18 +1,8 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var velocidade = 50
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$Timer.start()
-	pass # Replace with function body.
-	
-
-var velocidade = 85
 var direcao = 1
 var forca_gravidade = 30
 var mov = Vector2.ZERO
@@ -26,12 +16,20 @@ var rangeAttackEsq = false
 var rangeAttackDir = false
 var laserCast = false
 var laserBeanAttack = false
-
-
-
+var laserCarregado = false
 var atacando = false
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$Timer.start()
+
+	pass # Replace with function body.
+	
+
+
+
 func _process(delta):
+	
 	movimentoAle()
 	seguindoAdversario()
 
@@ -173,7 +171,7 @@ func ZonaDeDeteccaoEsqOut(body):
 
 func carregaDisparo():
 	if(stoneAttack):
-		
+		print(stoneAttack)
 		var cena_disparo = preload("res://StoneProjectile.tscn")
 		var obj_disparo  = cena_disparo.instance()
 		
@@ -186,6 +184,22 @@ func carregaDisparo():
 			obj_disparo.global_position = $Position2DEsq.global_position
 		
 		obj_disparo.get_node("Area2D").direcao = direcao
+	
+	if(laserBeanAttack):
+		print("Disparou")
+		if (direcao==1):
+			$LaserBeanDir.play("LaserBean")
+			$LaserBeanDir.visible = true
+			$LaserBeanEsq.visible = false
+			
+		elif (direcao==-1):
+			$LaserBeanDir.play("LaserBean")
+			$LaserBeanDir.visible = false
+			$LaserBeanEsq.visible = true
+			
+	else:
+		$LaserBeanDir.visible = false
+		$LaserBeanEsq.visible = false
 
 
 """Funções ataque Ranged"""
@@ -299,41 +313,44 @@ func _on_AnimatedSprite_animation_finished():
 
 
 func onLaserAttackDir(body):
+
+	
 	if(body.name == "Personagem"):
 		perseguicao = false
 		movAleAtivo = false
+		stoneAttack = false
 		mov.x = 0
 		direcao = 1
 		$AnimatedSprite.flip_h = false
+		$LaserCast.flip_h = true
 		
 		if(not laserCast):
-			
 			laserCast = true
-			#rangeAttackDir = true
 			$LaserCast.visible = true
-			$LaserCast.flip_h = true
-			$LaserCast.play("LaserCast")
 			$AnimatedSprite.play("LaserCast")
+			$LaserCast.play("LaserCast")
+			laserBeanAttack = true
+			
 			atacando = true
 
-
 func onLaserAttackEsq(body):
+	
 	if(body.name == "Personagem"):
 		perseguicao = false
 		movAleAtivo = false
+		stoneAttack = false
 		mov.x = 0
 		direcao = -1
 		$AnimatedSprite.flip_h = true
+		$LaserCast.flip_h = false
 		
 		if(not laserCast):
-			
 			laserCast = true
-			#rangeAttackDir = true
 			$LaserCast.visible = true
-			$LaserCast.flip_h = false
-			$LaserCast.play("LaserCast")
-			
 			$AnimatedSprite.play("LaserCast")
+			$LaserCast.play("LaserCast")
+			laserBeanAttack = true
+			
 			atacando = true
 
 
@@ -341,23 +358,40 @@ func onLaserAttackEsq(body):
 
 func offLaserAttackDir(body):
 	if(body.name == "Personagem"):
+		$LaserBeanDir.visible = false
+		$LaserBeanEsq.visible = false
 		movAleAtivo = true
 		laserCast = false
 		laserBeanAttack = false
-		$LaserCast.visible = false
 		atacando = false
+		$LaserCast.visible = false
+		
 
 
 func offLaserAttackEsq(body):
 	if(body.name == "Personagem"):
+		$LaserBeanDir.visible = false
+		$LaserBeanEsq.visible = false
 		movAleAtivo = true
 		laserCast = false
 		laserBeanAttack = false
-		$LaserCast.visible = false
 		atacando = false
+		$LaserCast.visible = false
+
+
+
+
+func laserBeanAnimationFinished():
+#	$LaserBeanDir.visible = false
+#	$LaserBeanEsq.visible = false
+#	laserBeanAttack = false
+#	movAleAtivo = true
+	pass
+
 
 func _on_LaserCast_animation_finished():
-	if(atacando):
-		carregaDisparo()
-		laserBeanAttack = true
+	if ($LaserCast.animation=="LaserCast"):
 		
+		carregaDisparo()
+		atacando = false
+
