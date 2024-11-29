@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Personagem_Sheets/Adventurer/adventurer-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://script_personagem.gd" type="Script" id=2]
@@ -208,10 +208,67 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="Animation" id=51]
+resource_name = "DanoSofrido"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=52]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Personagem" type="Node2D"]
 position = Vector2( 159, 95 )
 
 [node name="Personagem" type="KinematicBody2D" parent="."]
+visible = false
 scale = Vector2( 1.15, 1.15 )
 script = ExtResource( 2 )
 
@@ -237,7 +294,12 @@ position = Vector2( -3.47827, -6.08695 )
 scale = Vector2( 1.50783, 1.50783 )
 frames = SubResource( 29 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem"]
+autoplay = "DanoSofrido"
+anims/DanoSofrido = SubResource( 51 )
+anims/RESET = SubResource( 52 )
 
 [connection signal="animation_finished" from="Personagem/AnimatedSprite" to="Personagem" method="animacaofinalizada"]

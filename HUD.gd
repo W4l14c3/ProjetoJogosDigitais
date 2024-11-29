@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -9,15 +9,15 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	if (ScriptGlobal.qtd_vidas==1):
-		$AnimationPlayer.play("uma_vida")
+		$AnimationPlayer.play("UmaVida")
 	elif (ScriptGlobal.qtd_vidas==2):
-		$AnimationPlayer.play("duas_vidas")
+		$AnimationPlayer.play("DuasVidas")
 	elif (ScriptGlobal.qtd_vidas==3):
-		$AnimationPlayer.play("tres_vidas")
+		$AnimationPlayer.play("TrêsVidas")
 	elif (ScriptGlobal.qtd_vidas==4):	
-		$AnimationPlayer.play("quatros_vidas")
-		
-	if (ScriptGlobal.qtd_vidas==0):	
-		get_tree().change_scene("res://cena_game_over.tscn")	
-		
-		
+		$AnimationPlayer.play("FullLife")
+
+#	if (ScriptGlobal.qtd_vidas==0):	
+#		get_tree().change_scene("res://cena_game_over.tscn")	
+
+
