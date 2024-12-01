@@ -9,9 +9,11 @@ var pulando = false
 var atack = false
 var tipo_golpe = 1
 var podeMover = true
+var currentAnimation = ""
 
 func _process(delta):
 	movimento()
+	
 	
 #FUNÇÕES GENERICAS ABAIXO:
 func movimento():
@@ -41,11 +43,13 @@ func movimento():
 				if(Input.is_action_just_pressed("AtaqueGiratorio")):
 					atack = true
 					podeMover = false
+					$RangeAttack1.get_node("CollisionShape2D").disabled = false
 					$AnimatedSprite.play("AttackSpin")
-					print(tipo_golpe)
+					currentAnimation = "AttackSpin"
 				elif(Input.is_action_just_pressed("AtaqueDuplo")):
 					podeMover = false
 					atack = true
+					
 					$AnimatedSprite.play("DoubleAttack")
 			
 		elif(not pulando and mov.y < -40):#Se o personagem ja não pulou
@@ -66,5 +70,31 @@ func movimento():
 
 
 func animacaofinalizada():
+	
 	podeMover = true
 	atack = false # Replace with function body.
+	if currentAnimation == "AttackSpin":
+		if $RangeAttack1.get_node("CollisionShape2D").disabled == false:
+			$RangeAttack1.get_node("CollisionShape2D").disabled = true
+		
+
+func rangeAttackSpin(body):
+	if body.name == "inimigo1":
+		print(atack)
+		if atack:
+			ScriptGlobal.takeAHit1 = true
+			ScriptGlobal.mob_Vida1 -= 2
+			print (ScriptGlobal.mob_Vida1)
+	elif body.name == "inimigo2":
+		print(atack)
+		if atack:
+			ScriptGlobal.takeAHit2 = true
+			ScriptGlobal.mob_Vida2 -= 2
+			print (ScriptGlobal.mob_Vida2)
+			
+	elif body.name == "inimigo3":
+		print(atack)
+		if atack:
+			ScriptGlobal.takeAHit3 = true
+			ScriptGlobal.mob_Vida3 -= 2
+			print (ScriptGlobal.mob_Vida3)

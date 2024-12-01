@@ -8,122 +8,98 @@
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Skeleton/Attack.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 150, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 300, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 450, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 600, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=6]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 750, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 900, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 1050, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=9]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=10]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 150, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=11]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 300, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=12]
-flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 450, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=13]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=14]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 150, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=15]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 300, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 450, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=17]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=18]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 150, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=19]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 300, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=20]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 450, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=21]
-flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=22]
-flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 150, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=23]
-flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 300, 0, 150, 150 )
 
 [sub_resource type="AtlasTexture" id=24]
-flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 450, 0, 150, 150 )
 
@@ -145,7 +121,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
-"loop": true,
+"loop": false,
 "name": "Take a hit",
 "speed": 5.0
 }, {
@@ -167,7 +143,7 @@ extents = Vector2( 19.613, 12.1775 )
 [sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 19.613, 12.3065 )
 
-[node name="InimigoEsq" type="Node2D"]
+[node name="inimigo" type="Node2D"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 scale = Vector2( 1.64237, 1.64237 )

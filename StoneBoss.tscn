@@ -530,7 +530,7 @@ position = Vector2( 146.13, -14.613 )
 scale = Vector2( 1.35906, 1.35906 )
 frames = SubResource( 130 )
 animation = "LaserBean"
-frame = 3
+frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="KinematicBody2D/LaserBeanDir"]
@@ -547,7 +547,7 @@ position = Vector2( -141.259, -14.613 )
 scale = Vector2( 1.35906, 1.35906 )
 frames = SubResource( 130 )
 animation = "LaserBean"
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 

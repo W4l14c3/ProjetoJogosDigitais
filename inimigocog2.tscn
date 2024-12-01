@@ -1,10 +1,10 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Run.png" type="Texture" id=1]
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Idle.png" type="Texture" id=2]
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Attack.png" type="Texture" id=3]
 [ext_resource path="res://Inimigos/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Take Hit.png" type="Texture" id=4]
-[ext_resource path="res://script_inimigo.gd" type="Script" id=5]
+[ext_resource path="res://script_inimigocog2.gd" type="Script" id=5]
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
@@ -120,7 +120,7 @@ animations = [ {
 "speed": 6.0
 }, {
 "frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
-"loop": true,
+"loop": false,
 "name": "Take a hit",
 "speed": 5.0
 } ]
@@ -137,74 +137,104 @@ extents = Vector2( 19.613, 12.1775 )
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 19.613, 12.3065 )
 
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0.32549, 1, 0.352941, 1 )
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.89, 0.2225, 0.2225, 0.866667 )
+
 [node name="Node2D" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ 50.0 ]
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="inimigo2" type="KinematicBody2D" parent="."]
 scale = Vector2( 1.64237, 1.64237 )
 script = ExtResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="inimigo2"]
 frames = SubResource( 14 )
 animation = "Run"
 frame = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo2"]
 position = Vector2( 0.608877, 7.9154 )
 shape = SubResource( 27 )
 
-[node name="RayCast2D2Esquerdo" type="RayCast2D" parent="KinematicBody2D"]
+[node name="RayCast2D2Esquerdo" type="RayCast2D" parent="inimigo2"]
 position = Vector2( -12.1775, 17.6574 )
 scale = Vector2( 0.375329, 0.354137 )
 enabled = true
 cast_to = Vector2( 0, 36.1059 )
 
-[node name="RayCast2D2Direito" type="RayCast2D" parent="KinematicBody2D"]
+[node name="RayCast2D2Direito" type="RayCast2D" parent="inimigo2"]
 position = Vector2( 11.5687, 18.2663 )
 scale = Vector2( 0.375329, 0.354137 )
 enabled = true
 cast_to = Vector2( 0, 35 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="inimigo2"]
 root_node = NodePath("../..")
 
-[node name="Timer" type="Timer" parent="KinematicBody2D"]
+[node name="Timer" type="Timer" parent="inimigo2"]
 wait_time = 15.0
 autostart = true
 
-[node name="ZonaDeDeteccaoEsquerda" type="Area2D" parent="KinematicBody2D"]
+[node name="ZonaDeDeteccaoEsquerda" type="Area2D" parent="inimigo2"]
 position = Vector2( -43.8391, 9.74202 )
 
-[node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoEsquerda"]
+[node name="Zona" type="CollisionShape2D" parent="inimigo2/ZonaDeDeteccaoEsquerda"]
 position = Vector2( -1.90735e-05, 0 )
 shape = SubResource( 28 )
 
-[node name="ZonaDeDeteccaoDireita" type="Area2D" parent="KinematicBody2D"]
+[node name="ZonaDeDeteccaoDireita" type="Area2D" parent="inimigo2"]
 position = Vector2( 43.8391, 9.74202 )
 
-[node name="Zona" type="CollisionShape2D" parent="KinematicBody2D/ZonaDeDeteccaoDireita"]
+[node name="Zona" type="CollisionShape2D" parent="inimigo2/ZonaDeDeteccaoDireita"]
 position = Vector2( 1.90735e-05, 0 )
 shape = SubResource( 28 )
 
-[node name="RangeAttackEsq" type="Area2D" parent="KinematicBody2D"]
+[node name="RangeAttackEsq" type="Area2D" parent="inimigo2"]
 position = Vector2( -43.8391, 9.74202 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/RangeAttackEsq"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo2/RangeAttackEsq"]
 modulate = Color( 1, 0, 0.140625, 1 )
 position = Vector2( 9.61303, 2.4355 )
 shape = SubResource( 29 )
 
-[node name="RangeAttackDir" type="Area2D" parent="KinematicBody2D"]
+[node name="RangeAttackDir" type="Area2D" parent="inimigo2"]
 position = Vector2( 43.8391, 9.74202 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/RangeAttackDir"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo2/RangeAttackDir"]
 modulate = Color( 1, 0, 0.140625, 1 )
 position = Vector2( -9.61303, 2.30651 )
 shape = SubResource( 30 )
 
-[connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsquerda"]
-[connection signal="body_exited" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsqOut"]
-[connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoDireita" to="KinematicBody2D" method="ZonaDeDeteccaoDireita"]
-[connection signal="body_exited" from="KinematicBody2D/ZonaDeDeteccaoDireita" to="KinematicBody2D" method="ZonaDeDeteccaoDirOut"]
+[node name="CogMonster" type="Label" parent="inimigo2"]
+modulate = Color( 1, 0.913725, 0, 1 )
+margin_left = -9.74202
+margin_top = -24.355
+margin_right = 81.258
+margin_bottom = -10.355
+rect_scale = Vector2( 0.273714, 0.273714 )
+text = "CogMonster"
+align = 1
+uppercase = true
+
+[node name="ProgressBar" type="ProgressBar" parent="inimigo2"]
+margin_left = -14.613
+margin_top = -19.484
+margin_right = -10.613
+margin_bottom = 0.515959
+rect_scale = Vector2( 7.77318, 0.279365 )
+custom_styles/fg = SubResource( 31 )
+custom_styles/bg = SubResource( 32 )
+max_value = 10.0
+value = 10.0
+percent_visible = false
+
+[connection signal="animation_finished" from="inimigo2/AnimatedSprite" to="inimigo2" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="inimigo2/ZonaDeDeteccaoEsquerda" to="inimigo2" method="ZonaDeDeteccaoEsquerda"]
+[connection signal="body_exited" from="inimigo2/ZonaDeDeteccaoEsquerda" to="inimigo2" method="ZonaDeDeteccaoEsqOut"]
+[connection signal="body_entered" from="inimigo2/ZonaDeDeteccaoDireita" to="inimigo2" method="ZonaDeDeteccaoDireita"]
+[connection signal="body_exited" from="inimigo2/ZonaDeDeteccaoDireita" to="inimigo2" method="ZonaDeDeteccaoDirOut"]
