@@ -249,7 +249,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:modulate")
@@ -265,16 +265,15 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 43.913, 6.3587 )
+extents = Vector2( 37.8261, 6.3587 )
 
 [sub_resource type="CircleShape2D" id=54]
-radius = 31.1712
+radius = 31.3526
 
 [node name="Personagem" type="Node2D"]
 position = Vector2( 159, 95 )
 
 [node name="Personagem" type="KinematicBody2D" parent="."]
-visible = false
 scale = Vector2( 1.15, 1.15 )
 script = ExtResource( 2 )
 
@@ -299,12 +298,9 @@ limit_bottom = 597
 position = Vector2( -3.47827, -6.08695 )
 scale = Vector2( 1.50783, 1.50783 )
 frames = SubResource( 29 )
-animation = "AttackSpin"
-frame = 5
-playing = true
+animation = "Idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem"]
-autoplay = "DanoSofrido"
 anims/DanoSofrido = SubResource( 51 )
 anims/RESET = SubResource( 52 )
 
@@ -313,12 +309,12 @@ position = Vector2( -2.6087, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem/RangeAttack1"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 1.66893e-05, -5.72205e-06 )
+position = Vector2( -0.434784, -7.62939e-06 )
 shape = SubResource( 53 )
 disabled = true
 
 [node name="RangeAttack2" type="Area2D" parent="Personagem"]
-position = Vector2( 7.82608, -3.47826 )
+position = Vector2( -2.60869, -0.869564 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem/RangeAttack2"]
 modulate = Color( 1, 0, 0, 1 )
@@ -327,3 +323,4 @@ disabled = true
 
 [connection signal="animation_finished" from="Personagem/AnimatedSprite" to="Personagem" method="animacaofinalizada"]
 [connection signal="body_entered" from="Personagem/RangeAttack1" to="Personagem" method="rangeAttackSpin"]
+[connection signal="body_entered" from="Personagem/RangeAttack2" to="Personagem" method="rangeAttack2"]

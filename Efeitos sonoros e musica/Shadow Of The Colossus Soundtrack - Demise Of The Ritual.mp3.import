@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Shadow Of The Colossus Soundtrack - Demise Of The Ritual.mp3-39460055d2856959d92f4f0418be9751.mp3str"
+
+[deps]
+
+source_file="res://Efeitos sonoros e musica/Shadow Of The Colossus Soundtrack - Demise Of The Ritual.mp3"
+dest_files=[ "res://.import/Shadow Of The Colossus Soundtrack - Demise Of The Ritual.mp3-39460055d2856959d92f4f0418be9751.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

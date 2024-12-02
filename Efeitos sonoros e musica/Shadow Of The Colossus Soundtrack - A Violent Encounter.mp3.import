@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Shadow Of The Colossus Soundtrack - A Violent Encounter.mp3-8a739ab5db7c6359d13173a6275a3661.mp3str"
+
+[deps]
+
+source_file="res://Efeitos sonoros e musica/Shadow Of The Colossus Soundtrack - A Violent Encounter.mp3"
+dest_files=[ "res://.import/Shadow Of The Colossus Soundtrack - A Violent Encounter.mp3-8a739ab5db7c6359d13173a6275a3661.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

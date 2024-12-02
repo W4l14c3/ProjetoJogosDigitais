@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=2]
+[gd_scene load_steps=120 format=2]
 
 [ext_resource path="res://Inimigos/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" type="Texture" id=1]
 [ext_resource path="res://script_StoneBoss.gd" type="Script" id=2]
@@ -504,7 +504,117 @@ extents = Vector2( 10, 73.0651 )
 [sub_resource type="RectangleShape2D" id=150]
 extents = Vector2( 10, 73.0651 )
 
+[sub_resource type="Animation" id=161]
+resource_name = "BeanDir"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/LaserBeanDir:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 19.484, 97.4202 ), Vector2( 53.5811, 87.6782 ), Vector2( 87.6782, 68.1941 ), Vector2( 112.033, 43.8391 ), Vector2( 131.517, 14.613 ), Vector2( 141.259, -14.613 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/LaserBeanDir:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 74.9999, 59.9999, 44.9999, 30.0, 15.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=162]
+resource_name = "BeanEsq"
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/LaserBeanEsq:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -74.9999, -59.9999, -44.9999, -30.0, -15.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/LaserBeanEsq:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -19.484, 92.5492 ), Vector2( -53.5811, 82.8072 ), Vector2( -82.8072, 68.1941 ), Vector2( -112.033, 43.8391 ), Vector2( -131.517, 14.613 ), Vector2( -136.388, -14.613 ) ]
+}
+
+[sub_resource type="Animation" id=163]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/LaserBeanEsq:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -14.613, 102.291 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/LaserBeanEsq:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -74.9999 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/LaserBeanDir:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 53.5811, 87.6782 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/LaserBeanDir:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 59.9999 ]
+}
+
 [node name="StoneBoss" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -64.0 ],
+"_edit_vertical_guides_": [ 8.0 ]
+}
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 scale = Vector2( 1.64237, 1.64237 )
@@ -514,27 +624,25 @@ script = ExtResource( 2 )
 scale = Vector2( 2.16011, 2.16011 )
 frames = SubResource( 27 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
-flip_h = true
 
 [node name="LaserCast" type="AnimatedSprite" parent="KinematicBody2D"]
-visible = false
 position = Vector2( 0, -19.484 )
 frames = SubResource( 151 )
 animation = "LaserCast"
 
 [node name="LaserBeanDir" type="AnimatedSprite" parent="KinematicBody2D"]
 visible = false
-position = Vector2( 146.13, -14.613 )
+position = Vector2( 53.5811, 87.6782 )
+rotation = 1.0472
 scale = Vector2( 1.35906, 1.35906 )
 frames = SubResource( 130 )
 animation = "LaserBean"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="KinematicBody2D/LaserBeanDir"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LaserBeanDir/Area2D"]
 position = Vector2( 25.0888, -17.9206 )
@@ -543,11 +651,12 @@ shape = SubResource( 147 )
 
 [node name="LaserBeanEsq" type="AnimatedSprite" parent="KinematicBody2D"]
 visible = false
-position = Vector2( -141.259, -14.613 )
+position = Vector2( -14.613, 102.291 )
+rotation = -1.309
 scale = Vector2( 1.35906, 1.35906 )
 frames = SubResource( 130 )
 animation = "LaserBean"
-frame = 3
+frame = 2
 playing = true
 flip_h = true
 
@@ -634,23 +743,34 @@ position = Vector2( -58.4521, -24.355 )
 scale = Vector2( 0.608876, 0.608876 )
 
 [node name="LaserAttackDir" type="Area2D" parent="KinematicBody2D"]
-position = Vector2( 233.808, 38.9681 )
+position = Vector2( 272.777, 38.9681 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LaserAttackDir"]
 position = Vector2( 0.000457764, -2.28882e-05 )
+scale = Vector2( 7, 1 )
 shape = SubResource( 149 )
 
 [node name="LaserAttackEsq" type="Area2D" parent="KinematicBody2D"]
-position = Vector2( -238.679, 38.9681 )
+position = Vector2( -267.906, 38.9681 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LaserAttackEsq"]
-position = Vector2( -1.52588e-05, 0 )
+position = Vector2( -0.000488281, -2.28882e-05 )
+scale = Vector2( 7, 1 )
 shape = SubResource( 150 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+root_node = NodePath("../..")
+autoplay = "BeanDir"
+anims/BeanDir = SubResource( 161 )
+anims/BeanEsq = SubResource( 162 )
+anims/RESET = SubResource( 163 )
 
 [connection signal="animation_finished" from="KinematicBody2D/AnimatedSprite" to="KinematicBody2D" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="KinematicBody2D/LaserCast" to="KinematicBody2D" method="_on_LaserCast_animation_finished"]
 [connection signal="animation_finished" from="KinematicBody2D/LaserBeanDir" to="KinematicBody2D" method="laserBeanAnimationFinished"]
+[connection signal="body_entered" from="KinematicBody2D/LaserBeanDir/Area2D" to="KinematicBody2D" method="laserBenaDirDMG"]
 [connection signal="animation_finished" from="KinematicBody2D/LaserBeanEsq" to="KinematicBody2D" method="laserBeanAnimationFinished"]
+[connection signal="body_entered" from="KinematicBody2D/LaserBeanEsq/Area2D" to="KinematicBody2D" method="laserBeanEsqDMg"]
 [connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsquerda"]
 [connection signal="body_exited" from="KinematicBody2D/ZonaDeDeteccaoEsquerda" to="KinematicBody2D" method="ZonaDeDeteccaoEsqOut"]
 [connection signal="body_entered" from="KinematicBody2D/ZonaDeDeteccaoDireita" to="KinematicBody2D" method="ZonaDeDeteccaoDireita"]

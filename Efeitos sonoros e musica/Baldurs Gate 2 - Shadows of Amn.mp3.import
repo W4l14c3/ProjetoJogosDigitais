@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Baldurs Gate 2 - Shadows of Amn.mp3-342a07fe124e773844f8b38122787bdb.mp3str"
+
+[deps]
+
+source_file="res://Efeitos sonoros e musica/Baldurs Gate 2 - Shadows of Amn.mp3"
+dest_files=[ "res://.import/Baldurs Gate 2 - Shadows of Amn.mp3-342a07fe124e773844f8b38122787bdb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

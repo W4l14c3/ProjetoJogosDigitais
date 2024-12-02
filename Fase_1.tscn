@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://inimigocog2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Cena_Sheets/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Tileset Ground.png" type="Texture" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://Cena_Sheets/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" type="Texture" id=11]
 [ext_resource path="res://Portal-2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=13]
-[ext_resource path="res://StoneBoss.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Efeitos sonoros e musica/Shadow Of The Colossus Soundtrack - Silence.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Efeitos sonoros e musica/Windy Forrest.mp3" type="AudioStream" id=15]
 
 [sub_resource type="TileSet" id=4]
 0/name = "brush.png 0"
@@ -5431,12 +5432,8 @@ cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( 788176, 137, 0, 919235, 137, 0, 919263, 137, 0, 2163398, 138, 0, 2228686, 138, 0, 2228945, 138, 0, 3015434, 137, 0, 3867822, 59, 0, 4325737, 138, 0, 4326018, 138, 0, 4326480, 138, 0, 4391474, 133, 0, 4391478, 133, 0, 4391482, 133, 0, 4522561, 134, 0, 4522562, 134, 0, 4522564, 134, 0, 4588065, 132, 0, 4588069, 132, 0, 4653609, 132, 0, 4653612, 132, 0, 4653614, 132, 0, 4915636, 137, 0, 5310256, 138, 0, 5441343, 138, 0, 5571159, 104, 0, 6096749, 137, 0, 6162292, 137, 0, 6292073, 120, 0, 6423886, 138, 0, 6423923, 138, 0, 6489471, 138, 0, 6619901, 104, 0, 6816591, 103, 0, 7012368, 137, 0, 7013163, 105, 0, 7079270, 137, 0, 7079278, 137, 0, 7995892, 175, 0, 7996657, 57, 0, 8323540, 176, 0, 8454576, 118, 0, 8586807, 39, 0, 8717499, 104, 0, 8913475, 103, 0, 8913956, 103, 0, 9044602, 105, 0, 9110415, 105, 0, 9504224, 72, 0, 9504240, 72, 0, 9569781, 73, 0, 9569785, 73, 0, 9635329, 72, 0, 9635361, 72, 0, 9700906, 72, 0, 9831885, 71, 0, 9831892, 71, 0, 9831901, 71, 0, 9831910, 71, 0, 9831946, 71, 0, 9831961, 71, 0, 9897282, 76, 0, 9897489, 71, 0, 9961531, 9, 0, 9961665, 9, 0, 10092708, 2, 0, 10223677, 173, 0, 10289360, 41, 0, 10485775, 174, 0, 10749364, 104, 0 )
 
-[node name="StoneBoss" parent="." instance=ExtResource( 14 )]
-position = Vector2( 3056, 461 )
-scale = Vector2( 0.452159, 0.452159 )
-
 [node name="Personagem" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2432, 456 )
+position = Vector2( 64, 552 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( -64, 232 )
@@ -5449,3 +5446,16 @@ shape = SubResource( 54 )
 
 [node name="HUD" parent="HUD" instance=ExtResource( 13 )]
 position = Vector2( 40, 16 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2864, 520 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -30.0
+autoplay = true
+
+[node name="ambiente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -10.0
+autoplay = true

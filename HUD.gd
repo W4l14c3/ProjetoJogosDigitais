@@ -17,7 +17,7 @@ func _process(delta):
 	elif (ScriptGlobal.qtd_vidas==4):	
 		$AnimationPlayer.play("FullLife")
 
-#	if (ScriptGlobal.qtd_vidas==0):	
-#		get_tree().change_scene("res://cena_game_over.tscn")	
+	if (ScriptGlobal.qtd_vidas<=0):	
+		get_tree().change_scene("res://GameOver.tscn")	
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Personagem2.gd" type="Script" id=1]
 [ext_resource path="res://Personagem_Sheets/MagicClifs/Player/spritesheets/fall.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Personagem_Sheets/MagicClifs/Player/spritesheets/run.png" type="Texture" id=5]
 [ext_resource path="res://Personagem_Sheets/MagicClifs/Player/spritesheets/idle.png" type="Texture" id=6]
 [ext_resource path="res://Personagem_Sheets/MagicClifs/Player/spritesheets/attack.png" type="Texture" id=7]
+[ext_resource path="res://Efeitos sonoros e musica/sword-sound-260274.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Efeitos sonoros e musica/Run On Grit.mp3" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 12.1739
@@ -120,7 +122,7 @@ region = Rect2( 896, 0, 128, 96 )
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": false,
-"name": "Atack",
+"name": "Attack",
 "speed": 20.0
 }, {
 "frames": [ SubResource( 10 ), SubResource( 11 ) ],
@@ -149,6 +151,65 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="Animation" id=29]
+resource_name = "DanoSofrido"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 37.8261, 6.3587 )
+
 [node name="Personagem2" type="Node2D"]
 position = Vector2( 82, 401 )
 __meta__ = {
@@ -174,4 +235,25 @@ limit_bottom = 419
 frames = SubResource( 28 )
 animation = "idle"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem"]
+anims/DanoSofrido = SubResource( 29 )
+anims/RESET = SubResource( 30 )
+
+[node name="RangeAttack1" type="Area2D" parent="Personagem"]
+position = Vector2( 1.73913, 25.2174 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem/RangeAttack1"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -0.434784, -7.62939e-06 )
+shape = SubResource( 31 )
+disabled = true
+
+[node name="espada" type="AudioStreamPlayer" parent="Personagem"]
+stream = ExtResource( 8 )
+volume_db = -30.0
+
+[node name="run" type="AudioStreamPlayer" parent="Personagem"]
+stream = ExtResource( 9 )
+
 [connection signal="animation_finished" from="Personagem/AnimatedSprite" to="Personagem" method="animationAtack"]
+[connection signal="body_entered" from="Personagem/RangeAttack1" to="Personagem" method="rangeAttack"]

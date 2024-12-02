@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/espada.mp3-32d947223c6eac5dc14711b902fbab2b.mp3str"
+
+[deps]
+
+source_file="res://Efeitos sonoros e musica/espada.mp3"
+dest_files=[ "res://.import/espada.mp3-32d947223c6eac5dc14711b902fbab2b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-var velocidade = 50
+var velocidade = 200
 
 var direcao = 1
 var forca_gravidade = 30
@@ -191,11 +191,13 @@ func carregaDisparo():
 			$LaserBeanDir.play("LaserBean")
 			$LaserBeanDir.visible = true
 			$LaserBeanEsq.visible = false
+			$AnimationPlayer.play("BeanDir")
 			
 		elif (direcao==-1):
 			$LaserBeanDir.play("LaserBean")
 			$LaserBeanDir.visible = false
 			$LaserBeanEsq.visible = true
+			$AnimationPlayer.play("BeanEsq")
 			
 	else:
 		$LaserBeanDir.visible = false
@@ -269,7 +271,6 @@ func onMeleeAttackRangeDir(body):
 func onMeleeAttackRangeEsq(body):
 	
 	if(body.name == "Personagem"):
-		print("Na mira")
 		perseguicao = false
 		movAleAtivo = false
 		mov.x = 0
@@ -394,4 +395,20 @@ func _on_LaserCast_animation_finished():
 		
 		carregaDisparo()
 		atacando = false
+
+
+
+func laserBenaDirDMG(body):
+	print(body.name)
+	if(body.name == "Personagem"):
+		ScriptGlobal.qtd_vidas -= 2 
+		body.get_node("AnimationPlayer").play("DanoSofrido")
+		
+
+
+func laserBeanEsqDMg(body):
+	print(body.name)
+	if(body.name == "Personagem"):
+		ScriptGlobal.qtd_vidas -= 2 
+		body.get_node("AnimationPlayer").play("DanoSofrido")
 

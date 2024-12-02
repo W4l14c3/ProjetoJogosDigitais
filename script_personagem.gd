@@ -10,6 +10,9 @@ var atack = false
 var tipo_golpe = 1
 var podeMover = true
 var currentAnimation = ""
+var AttackSpin = 2
+var DoubleAttack = 4
+var dano = 0
 
 func _process(delta):
 	movimento()
@@ -46,11 +49,14 @@ func movimento():
 					$RangeAttack1.get_node("CollisionShape2D").disabled = false
 					$AnimatedSprite.play("AttackSpin")
 					currentAnimation = "AttackSpin"
+					dano = AttackSpin
 				elif(Input.is_action_just_pressed("AtaqueDuplo")):
+					$RangeAttack2.get_node("CollisionShape2D").disabled = false
+					$AnimatedSprite.play("DoubleAttack")
+					currentAnimation = "DoubleAttack"
 					podeMover = false
 					atack = true
-					
-					$AnimatedSprite.play("DoubleAttack")
+					dano = DoubleAttack
 			
 		elif(not pulando and mov.y < -40):#Se o personagem ja não pulou
 			print(mov.y)
@@ -65,7 +71,7 @@ func movimento():
 		mov = move_and_slide(mov,Vector2(0, -1))
 		
 		if(global_position.y > $Camera2D.limit_bottom):
-	#		ScriptGlobal.reset()
+			ScriptGlobal.reset()
 			get_tree().reload_current_scene()
 
 
@@ -76,25 +82,49 @@ func animacaofinalizada():
 	if currentAnimation == "AttackSpin":
 		if $RangeAttack1.get_node("CollisionShape2D").disabled == false:
 			$RangeAttack1.get_node("CollisionShape2D").disabled = true
+	elif currentAnimation == "DoubleAttack":
+		if $RangeAttack2/CollisionShape2D.disabled == false:
+			$RangeAttack2/CollisionShape2D.disabled = true
 		
 
 func rangeAttackSpin(body):
+	print(dano)
 	if body.name == "inimigo1":
-		print(atack)
 		if atack:
 			ScriptGlobal.takeAHit1 = true
-			ScriptGlobal.mob_Vida1 -= 2
+			ScriptGlobal.mob_Vida1 -= dano
+			ScriptGlobal.personagem = 1
 			print (ScriptGlobal.mob_Vida1)
 	elif body.name == "inimigo2":
-		print(atack)
 		if atack:
 			ScriptGlobal.takeAHit2 = true
-			ScriptGlobal.mob_Vida2 -= 2
+			ScriptGlobal.mob_Vida2 -= dano
+			ScriptGlobal.personagem = 1
 			print (ScriptGlobal.mob_Vida2)
 			
 	elif body.name == "inimigo3":
-		print(atack)
 		if atack:
 			ScriptGlobal.takeAHit3 = true
-			ScriptGlobal.mob_Vida3 -= 2
+			ScriptGlobal.mob_Vida3 -= dano
+			ScriptGlobal.personagem = 1
+			print (ScriptGlobal.mob_Vida3)
+
+
+func rangeAttack2(body):
+	print(dano)
+	if body.name == "inimigo1":
+		if atack:
+			ScriptGlobal.takeAHit1 = true
+			ScriptGlobal.mob_Vida1 -= dano
+			print (ScriptGlobal.mob_Vida1)
+	elif body.name == "inimigo2":
+		if atack:
+			ScriptGlobal.takeAHit2 = true
+			ScriptGlobal.mob_Vida2 -= dano
+			print (ScriptGlobal.mob_Vida2)
+			
+	elif body.name == "inimigo3":
+		if atack:
+			ScriptGlobal.takeAHit3 = true
+			ScriptGlobal.mob_Vida3 -= dano
 			print (ScriptGlobal.mob_Vida3)

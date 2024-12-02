@@ -112,7 +112,7 @@ animations = [ {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "Melee",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
@@ -152,12 +152,13 @@ __meta__ = {
 
 [node name="inimigo1" type="KinematicBody2D" parent="."]
 scale = Vector2( 1.64237, 1.64237 )
+collision_layer = 2
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="inimigo1"]
 frames = SubResource( 14 )
-animation = "Run"
-frame = 3
+animation = "Idle"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo1"]
 position = Vector2( 0.608877, 7.9154 )
@@ -167,16 +168,16 @@ shape = SubResource( 27 )
 position = Vector2( -14.613, 19.484 )
 scale = Vector2( 0.375329, 0.354137 )
 enabled = true
-cast_to = Vector2( 0, 36.1059 )
+cast_to = Vector2( -7.62939e-05, 27.5093 )
 
 [node name="RayCast2D2Direito" type="RayCast2D" parent="inimigo1"]
 position = Vector2( 14.613, 19.484 )
 scale = Vector2( 0.375329, 0.354137 )
 enabled = true
-cast_to = Vector2( 0, 35 )
+cast_to = Vector2( 7.62939e-05, 27.5093 )
 
 [node name="Timer" type="Timer" parent="inimigo1"]
-wait_time = 15.0
+wait_time = 30.0
 autostart = true
 
 [node name="ZonaDeDeteccaoEsquerda" type="Area2D" parent="inimigo1"]
@@ -242,5 +243,5 @@ percent_visible = false
 [connection signal="body_exited" from="inimigo1/ZonaDeDeteccaoDireita" to="inimigo1" method="ZonaDeDeteccaoDirOut"]
 [connection signal="body_entered" from="inimigo1/RangeAttackEsq" to="inimigo1" method="rangeAttackEsq"]
 [connection signal="body_exited" from="inimigo1/RangeAttackEsq" to="inimigo1" method="rangeAttackEsqOut"]
-[connection signal="body_entered" from="inimigo1/RangeAttackDir" to="inimigo1" method="RangeAttackDir"]
+[connection signal="body_entered" from="inimigo1/RangeAttackDir" to="inimigo1" method="rangeAttackDir"]
 [connection signal="body_exited" from="inimigo1/RangeAttackDir" to="inimigo1" method="rangeAttackDirOut"]

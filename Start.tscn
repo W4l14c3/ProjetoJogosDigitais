@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Start.gd" type="Script" id=2]
 [ext_resource path="res://VEM.png" type="Texture" id=3]
+[ext_resource path="res://Efeitos sonoros e musica/Baldurs Gate 2 - Shadows of Amn.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 13
@@ -29,5 +30,9 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Play"
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="onStart"]

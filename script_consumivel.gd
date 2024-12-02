@@ -18,6 +18,6 @@ func _ready():
 
 func Consumir_item(body):
 	if (body.name=="Personagem"):
-		body.tipo_golpe = 2
+		ScriptGlobal.qtd_vidas += 1
 		queue_free()
 		

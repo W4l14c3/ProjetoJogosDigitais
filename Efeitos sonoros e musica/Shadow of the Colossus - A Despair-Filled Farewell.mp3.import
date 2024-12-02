@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Shadow of the Colossus - A Despair-Filled Farewell.mp3-99530a0d7eeb8a27f79a3ec212a50029.mp3str"
+
+[deps]
+
+source_file="res://Efeitos sonoros e musica/Shadow of the Colossus - A Despair-Filled Farewell.mp3"
+dest_files=[ "res://.import/Shadow of the Colossus - A Despair-Filled Farewell.mp3-99530a0d7eeb8a27f79a3ec212a50029.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

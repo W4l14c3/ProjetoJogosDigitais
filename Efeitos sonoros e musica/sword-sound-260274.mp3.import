@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sword-sound-260274.mp3-968765aaa717d4ae0232428b8b96e95e.mp3str"
+
+[deps]
+
+source_file="res://Efeitos sonoros e musica/sword-sound-260274.mp3"
+dest_files=[ "res://.import/sword-sound-260274.mp3-968765aaa717d4ae0232428b8b96e95e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

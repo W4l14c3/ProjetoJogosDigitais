@@ -9,6 +9,7 @@ func MudarMapa(body):
 	if(portalOpen):
 		
 		if(body.name == "Personagem"):
+			ScriptGlobal.reset()
 			get_tree().change_scene("res://Fase-2.tscn")
 			
 

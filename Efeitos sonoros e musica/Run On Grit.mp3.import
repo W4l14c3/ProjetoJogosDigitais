@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Run On Grit.mp3-793d7590b6abe5b689554c1b955e0885.mp3str"
+
+[deps]
+
+source_file="res://Efeitos sonoros e musica/Run On Grit.mp3"
+dest_files=[ "res://.import/Run On Grit.mp3-793d7590b6abe5b689554c1b955e0885.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

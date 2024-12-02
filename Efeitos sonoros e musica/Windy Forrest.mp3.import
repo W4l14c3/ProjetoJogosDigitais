@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Windy Forrest.mp3-e860cdec791f7a47fdae6839266a09ad.mp3str"
+
+[deps]
+
+source_file="res://Efeitos sonoros e musica/Windy Forrest.mp3"
+dest_files=[ "res://.import/Windy Forrest.mp3-e860cdec791f7a47fdae6839266a09ad.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
